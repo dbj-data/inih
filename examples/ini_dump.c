@@ -4,6 +4,7 @@
 #include <string.h>
 #include "../ini.h"
 
+// called from ini_parse
 static int dumper(void* user, const char* section, const char* name,
 	const char* value)
 {
@@ -18,7 +19,7 @@ static int dumper(void* user, const char* section, const char* name,
 	return 1;
 }
 
-int mian(int argc, char* argv[])
+int ini_dump(int argc, char* argv[])
 {
 	int error;
 

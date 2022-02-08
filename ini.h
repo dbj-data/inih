@@ -18,6 +18,7 @@ https://github.com/benhoyt/inih
 
 */
 
+#ifndef SUPR4996
 /*
 (c) 2021 by dbj@dbj.org
 
@@ -39,6 +40,9 @@ only that will silence the cl.exe compiler
 #define SUPR4996 
 #endif
 
+#endif // ! SUPR4996
+
+
 /* Make this header file easier to include in C++ code */
 #ifdef __cplusplus
 extern "C" {
@@ -52,7 +56,7 @@ extern "C" {
   This is a replacement for strdup(). This implementation is provided
   for systems that do not have it.
  */
-	static inline char* xstrdup(const char* s)
+	static inline char* inih_strdup(const char* s)
 	{
 		assert(s);
 		if (!s)	return NULL;

@@ -14,10 +14,10 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\ini.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ini.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\ini.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\value_parsers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ini.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)value_parsers.h" />
   </ItemGroup>
 </Project>

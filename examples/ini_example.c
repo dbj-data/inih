@@ -21,7 +21,7 @@ it is simply read line by line, each line given to a callback
 half  processed
 
 if ini file is empty the handler callback is not called
-if there are just ections but no value name pairs this handler is not called
+if there are just sections but no value name pairs this handler is not called
 if there are no sections only one or more name = value pairs the thing will work,
 but you have to code the callback accordingly; section arg will exist as a empty string
 
