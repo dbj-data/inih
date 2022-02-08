@@ -62,7 +62,7 @@ extern "C" {
 		if (!s)	return NULL;
 
 		size_t  len = strlen(s) + 1;
-		char* t = (char*)malloc(len);
+		char* t = (char*)calloc(len, sizeof(char) );
 		if (t) {
 			memcpy(t, s, len);
 		}
