@@ -1,3 +1,10 @@
+>
+> dbj notes (2022Q1)
+> 1. this is not a lib build, just include ini.h and ini.c in your projects
+> 2. if no section in your ini file, it will be parsed to "" not NULL
+>
+
+
 # inih (INI Not Invented Here)
 
 [![Tests](https://github.com/benhoyt/inih/actions/workflows/tests.yml/badge.svg)](https://github.com/benhoyt/inih/actions/workflows/tests.yml)

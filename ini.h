@@ -1,3 +1,4 @@
+#pragma once
 #ifndef INI_H
 #define INI_H
 
@@ -56,7 +57,7 @@ extern "C" {
   This is a replacement for strdup(). This implementation is provided
   for systems that do not have it.
  */
-	static inline char* inih_strdup(const char* s)
+	__inline char* inih_strdup(const char* s)
 	{
 		assert(s);
 		if (!s)	return NULL;

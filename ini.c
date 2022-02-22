@@ -18,6 +18,8 @@ https://github.com/benhoyt/inih
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <dbj-win/dbj-win.h>
+#include <dbj-win/dbj_strsafe.h>
 
 #include "ini.h"
 
@@ -247,14 +249,16 @@ int ini_parse_file(FILE* file, ini_handler handler, void* user)
 }
 
 /* See documentation in header file. */
-int ini_parse(const char* filename, ini_handler handler, void* user)
-{
-    FILE* file;
-    int error;
+int ini_parse(const char* filename, ini_handler handler, void* user) {
+  FILE* file;
+  int error;
 
-    file = fopen(filename, "r");
-    if (!file)
-        return -1;
+  int err_ = fopen_s(&file, filename, "r");
+  if (!file) {
+    DBJ_DBG_PRINT("fopen_s has failed with error: %s, for file %s",
+                  strerror(err_), filename);
+    return -1;
+  }
     error = ini_parse_file(file, handler, user);
     fclose(file);
     return error;
