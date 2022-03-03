@@ -259,6 +259,7 @@ int ini_parse(const char* filename, ini_handler handler, void* user) {
                   strerror(err_), filename);
     return -1;
   }
+  (void)err_;
     error = ini_parse_file(file, handler, user);
     fclose(file);
     return error;
